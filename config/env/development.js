@@ -1,7 +1,13 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/mean-dev',
+	db: {
+		uri: process.env.DOCKER_MONG_URL || 'mongodb://localhost/mean-dev',
+		options: {
+			user: '',
+			pass: ''
+		}
+	},
 	app: {
 		title: 'MEAN.JS - Development Environment'
 	},
